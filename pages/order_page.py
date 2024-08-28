@@ -5,6 +5,7 @@ from pages.base import Base
 
 
 class OrderPage(Base, RandomDate):
+    """Класс офолмления заказа"""
     @allure.step('Заполняем поле Имя')
     def input_name(self, name):
         self.input_text(OrderPageLocators.FIELD_NAME, name)
