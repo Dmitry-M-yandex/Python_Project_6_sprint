@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 
 class HomePageLocators:
-
     # Логотип Яндекса на главной странице сайта
     HEADER_LOGO_YANDEX = (By.XPATH, "//a[contains(@class,'Header_LogoYandex')]")
     # Логотип Самокат на главной странице сайта

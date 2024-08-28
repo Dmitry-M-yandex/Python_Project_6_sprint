@@ -1,10 +1,8 @@
-import time
 import allure
-
 import pytest
 from data import QuestionData, TestURL
-from pages.header_page import HeaderPages
-from pages.home_page import HomePages
+from pages.header_page import HeaderPage
+from pages.home_page import HomePage
 
 
 class TestHomePage:
@@ -16,7 +14,7 @@ class TestHomePage:
                               (4, QuestionData.drop_down_text[4]), (5, QuestionData.drop_down_text[5]),
                               (6, QuestionData.drop_down_text[6]), (7, QuestionData.drop_down_text[7])])
     def test_check_answer(self, driver, index, text_answer):
-        home_page = HomePages(driver)
+        home_page = HomePage(driver)
         home_page.click_button_cookie()
         home_page.scroll_questions()
         question = home_page.click_question(index)
@@ -25,8 +23,8 @@ class TestHomePage:
 
     @allure.title('Проверка перехода на сайт Самоката при нажатии на логотип Самокат')
     def test_check_scooter_logo_click(self, driver):
-        header_page = HeaderPages(driver)
-        home_page = HomePages(driver)
+        header_page = HeaderPage(driver)
+        home_page = HomePage(driver)
         home_page.click_button_order_on_top()
         header_page.click_scooter_logo()
         url = header_page.wait_for_url(TestURL.URL_MAIN_PAGE)
@@ -34,7 +32,7 @@ class TestHomePage:
 
     @allure.title('Проверка перехода на сайт Дзена при нажатии на логотип Яндекс')
     def test_check_yandex_logo_click(self, driver):
-        header_page = HeaderPages(driver)
+        header_page = HeaderPage(driver)
         header_page.click_yandex_logo()
         url = header_page.wait_for_url(TestURL.URL_DZEN)
         assert TestURL.URL_DZEN in url

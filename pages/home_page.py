@@ -1,9 +1,9 @@
 import allure
 from locators.home_page_locators import HomePageLocators
-from pages.base_page import BasePages
+from pages.base import Base
 
 
-class HomePages(BasePages):
+class HomePage(Base):
     @allure.step('Скролим до раздела "Вопросы о важном"')
     def scroll_questions(self):
         self.scroll_element(HomePageLocators.TITLE_QUESTION)

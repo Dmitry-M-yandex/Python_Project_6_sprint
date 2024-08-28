@@ -4,7 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from locators.home_page_locators import HomePageLocators
 
 
-class BasePages:
+class Base:
     def __init__(self, driver):
         self.driver = driver
 
@@ -45,4 +45,3 @@ class BasePages:
     @allure.step('Делаем активной вкладкой последний открытый сайт')
     def switch_to_last_window(self):
         self.driver.switch_to.window(self.driver.window_handles[-1])
-

@@ -1,9 +1,9 @@
 import allure
 from locators.home_page_locators import HomePageLocators
-from pages.base_page import BasePages
+from pages.base import Base
 
 
-class HeaderPages(BasePages):
+class HeaderPage(Base):
 
     @allure.step('Кликаем на лого Яндекс')
     def click_yandex_logo(self):
