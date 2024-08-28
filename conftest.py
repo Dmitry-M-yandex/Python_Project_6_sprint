@@ -16,9 +16,3 @@ def driver():
     driver.get(TestURL.URL_MAIN_PAGE)
     yield driver
     driver.quit()
-
-
-@pytest.fixture
-def random_email():
-    email_registration = f'dmitrymalakhov12_{random.randint(100, 999)}@yandex.ru'
-    yield email_registration
