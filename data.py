@@ -1,6 +1,3 @@
-import random
-
-
 class TestURL:
     URL_MAIN_PAGE = "https://qa-scooter.praktikum-services.ru/"
     URL_DZEN = "https://dzen.ru"
@@ -31,13 +28,3 @@ class QuestionData:
                           'accordion__heading-6': 'Да, пока самокат не привезли. Штрафа не будет, объяснительной '
                                                   'записки тоже не попросим. Все же свои.'},
                       {'accordion__heading-7': 'Да, обязательно. Всем самокатов! И Москве, и Московской области.'}]
-
-
-class RandonDate:
-    @staticmethod
-    def random_data():
-        day = random.randint(1, 30)
-        month = random.randint(9, 12)
-        year = 2024
-        date = f"{day}.{month}.{year}"
-        return date

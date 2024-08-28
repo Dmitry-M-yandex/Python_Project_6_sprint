@@ -1,11 +1,10 @@
-import time
 import allure
-from data import RandonDate
+from helpers import RandomDate
 from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePages
 
 
-class OrderPages(BasePages, RandonDate):
+class OrderPages(BasePages, RandomDate):
     @allure.step('Заполняем поле Имя')
     def input_name(self, name):
         self.input_text(OrderPageLocators.FIELD_NAME, name)
